@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Quotes for My Girlfriend</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffe6e6;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .header {
+            font-family: 'Pacifico', cursive;
+            color: #ff4d4d;
+            font-size: 3em;
+        }
+
+        .quote {
+            font-size: 1.5em;
+            color: #ff6666;
+            margin: 20px auto;
+            max-width: 600px;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: float 5s infinite;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -25px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 25px;
+            top: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(-45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(-45deg);
+                opacity: 0;
+            }
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-duration: 4s;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 30%;
+            animation-duration: 6s;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(3) {
+            left: 50%;
+            animation-duration: 5s;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-child(4) {
+            left: 70%;
+            animation-duration: 7s;
+            animation-delay: 1s;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: black; /* Adjust text color if needed */
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #ccc; /* Optional: Adds a subtle border line */
+            background-color: transparent; /* Ensures no background color */
+        }
+        .gift-icon img {
+            width: 50px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        /* Video Container Styles */
+.video-container {
+    width: 100%;  /* Ensure full width */
+    max-width: 1200px;  /* Optional: Limit the max width for large screens */
+    margin: 0 auto;  /* Center the video */
+}
+
+/* Video Styles */
+.video {
+    width: 100%;  /* Make video take full container width */
+    height: auto;  /* Maintain aspect ratio */
+    object-fit: cover;  /* Ensure video fits the container nicely */
+    border: none;  /* Remove borders */
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Lovely Quotes</h1>
+        <div class="quote" id="quote">
+            Fetching a lovely quote for you...
+        </div>
+        <div class="hearts">
+            <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="heart" style="left: 20%; animation-delay: 1s;"></div>
+            <div class="heart" style="left: 30%; animation-delay: 2s;"></div>
+            <div class="heart" style="left: 40%; animation-delay: 3s;"></div>
+            <div class="heart" style="left: 50%; animation-delay: 4s;"></div>
+            <div class="heart" style="left: 60%; animation-delay: 5s;"></div>
+            <div class="heart" style="left: 70%; animation-delay: 6s;"></div>
+        </div>
+    </div>
+ 
+
+    <script>
+        // List of quotes
+        const quotes = [
+            "You are stronger than you think, and more capable than you can imagine.",
+            "Everything you need is already inside you.",
+            "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.",
+            "You are never too old to set another goal or to dream a new dream. — C.S. Lewis",
+            "Don’t be afraid to fail. Be afraid not to try.",
+            "A dream you dream alone is only a dream. A dream you dream together is reality. — John Lennon",
+            "Love is not about possession, it's about appreciation. — Osho",
+            "You are the architect of your own destiny.",
+            "Don’t wait for the perfect moment. Take the moment and make it perfect.",
+            "In the middle of every difficulty lies opportunity. — Albert Einstein",
+            "You are more than enough. You are everything.",
+            "There are no limits to what you can achieve, except the limits you place on yourself.",
+            "With every step you take, you get closer to your dreams.",
+            "Don’t ever doubt yourself. You are capable of amazing things.",
+            "You are what you believe yourself to be.",
+            "The only way to do great work is to love what you do. — Steve Jobs",
+            "I believe in you and your potential to make the world a better place.",
+            "Keep your face always toward the sunshine—and shadows will fall behind you. — Walt Whitman",
+            "You don’t have to be great to start, but you have to start to be great.",
+            "The only limit to our realization of tomorrow is our doubts of today. — Franklin D. Roosevelt",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. — Winston Churchill",
+            "You are braver than you believe, stronger than you seem, and smarter than you think. — A.A. Milne",
+            "What you get by achieving your goals is not as important as what you become by achieving your goals. — Zig Ziglar",
+            "Your life is your message to the world. Make it inspiring. — Lorrin L. Lee",
+            "There’s no such thing as a perfect person, only perfect love.",
+            "With you, I feel complete and safe, as if nothing else matters.",
+            "Through every challenge, we grow stronger, and we grow together.",
+            "I’m here to support you through every high and every low.",
+            "Your strength and courage inspire me every single day.",
+            "No matter how tough life gets, I’ll be here, cheering you on.",
+            "Together, we can handle anything life throws our way.",
+            "Your dreams matter to me. I believe in them, and I believe in you.",
+            "With love and patience, everything is possible.",
+            "I’ll be here through the good days and the bad days.",
+            "Never doubt your ability to make a difference.",
+            "If you can dream it, you can do it. — Walt Disney",
+            "You are the light that brightens my darkest days.",
+            "You are more than enough. You’re perfect just as you are.",
+            "Believe in yourself, because I believe in you.",
+            "I’ll always be here, cheering for your success, happiness, and dreams.",
+            "You don’t have to be perfect. You just have to be yourself.",
+            "I’m here to catch you when you fall, and to lift you even higher.",
+            "When life feels uncertain, remember that I’m always here for you.",
+            "Let your heart be light and your dreams take flight.",
+            "Sometimes the smallest step in the right direction ends up being the biggest step of your life.",
+            "You are enough, just as you are.",
+            "I’m here to share every moment with you—good or bad, we’ll get through it together.",
+            "You make life brighter and more beautiful just by being in it.",
+            "Don’t let fear hold you back from your greatness.",
+            "I’m always just a call away if you need someone to talk to.",
+            "Every day is a new chance to be better and to achieve what you desire.",
+            "Your potential is limitless. You can achieve anything you set your mind to.",
+            "You are not alone. I’ll be here for you, no matter what.",
+            "You are the love of my life, and I am proud to be yours.",
+            "Together, we create our own happiness.",
+            "You are my inspiration every single day.",
+            "Believe in yourself, because I’ll always believe in you.",
+            "You are the strength that keeps me going.",
+            "Life isn’t about waiting for the storm to pass. It’s about learning to dance in the rain.",
+            "I love you not because of what you do, but because of who you are.",
+            "Don’t ever give up on your dreams, because I never will.",
+            "You are the reason my heart beats so strongly.",
+            "When I’m with you, everything feels just right.",
+            "I am proud of everything you do, and I’ll always support you.",
+            "You inspire me to be better, to reach for the stars, and to never give up.",
+            "No matter where you go, I’ll be here waiting for you, supporting you every step of the way.",
+            "The greatest thing you'll ever learn is just to love and be loved in return. — Eden Ahbez",
+            "Love is the greatest power in the world, and we have it together.",
+            "You are my everything, and I am so grateful for your love.",
+            "You are my forever, my always, and everything in between.",
+            "No matter what happens, I’ll always stand by you.",
+            "I’m here for the good times, the bad times, and every moment in between.",
+            "Let your dreams set sail, and I’ll be with you through every wave.",
+            "I’ll be your rock, your foundation, and your safe place.",
+            "You are my heart’s compass, guiding me to where I need to be.",
+            "In this life, I’ll be by your side through all the ups and downs.",
+            "I am so grateful for your love, it makes every day feel like a blessing.",
+            "The world may be tough, but together we’re tougher.",
+            "You are my greatest adventure.",
+            "The only way to do great work is to love what you do. — Steve Jobs",
+            "I love you more than words can express, and my actions will always prove it.",
+            "With you, I feel safe, loved, and unstoppable.",
+            "I am so proud of who you are, and even prouder of who you are becoming.",
+            "When we’re together, everything feels just right.",
+            "I am here to support your dreams, your goals, and your heart.",
+            "You are everything I’ve ever wanted and more.",
+            "You make me better, and I’m forever grateful.",
+            "I’ll always be here for you, no matter what.",
+            "Together, we make magic.",
+            "Your presence in my life makes everything more beautiful.",
+            "You are the missing piece of my heart, and now I am whole.",
+            "You inspire me to be the best version of myself.",
+            "I’m here, always here to lift you up when you need it.",
+            "You are a shining star in my life.",
+            "With every breath, I will love you more.",
+            "You have a beautiful soul, and I’m lucky to share my life with you.",
+            "The world is full of possibilities, and we can achieve anything together.",
+            "I’ll be your strength when you feel weak, your guide when you feel lost.",
+            "Your love fills me with warmth and joy.",
+            "You make me feel alive in every way possible.",
+            "In your eyes, I find everything I need.",
+            "When I’m with you, I am exactly where I’m supposed to be.",
+            "My heart beats for you, and it always will.",
+            "You make every moment worth living.",
+            "Together, we can conquer the world.",
+            "You are my sun, my moon, and all my stars.",
+            "Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day",
+            "Every love story is beautiful, but ours is my favorite",
+            "You have bewitched me, body and soul, and I love, I love, I love you.", 
+            "In all the world, there is no heart for me like yours.", 
+            "My love for you is a journey; starting at forever, and ending at never", "You are my heart, my life, my one and only thought", "I am yours, don't you forget it.", "When I saw you I fell in love, and you smiled because you knew.", "Love is composed of a single soul inhabiting two bodies." , "You are the one I’ve waited for my whole life", "Together is a wonderful place to be",
+            "I fell in love with you because you loved me when I couldn't love myself", "You're the reason I look forward to the morning", "Every time I see you, I fall in love all over again", "You make me the happiest person in the world", "Love doesn't make the world go round, love is what makes the ride worthwhile." , "You are my happily ever after", "I need you like a heart needs a beat", "I love you, not for what you are, but for what I am when I am with you." , "I could start a fire with what I feel for you", "You are the one I’ve been waiting for all my life", "With you by my side, I feel like I can conquer the world", "Your love is all I need to feel alive", "You make my heart smile", "You are my one in a million", "I never want to stop making memories with you", "I love you to the moon and back", "You are the reason I believe in love", "Your smile is my favorite thing in the world", "I never want to let you go", "You’re my once in a lifetime", "You are my forever and always", "Every moment with you feels like a beautiful dream", "You're my person, and I love you more than words can say", "Your love is my greatest gift", "You are the best thing that’s ever been mine." , "Every time I look into your eyes, I feel like the luckiest person alive", "When I’m with you, the world just fades away", "I want all of you, forever, you and me, every day.", "You are my reason for everything","I want to be with you more than anything else in this world", "You are my dream come true", "With you, life is beautiful", "You are the rhythm of my heart", "I’m so glad I found you", "Your love completes me", "I can’t imagine my life without you", "You are the reason I smile every day", "You are my world, my universe", "Being with you feels like home", "You are my soul’s counterpart", "Loving you is the easiest thing I’ve ever done", "You make me want to be the best version of myself", "You are the one I’ve been waiting for all my life", "I’m so thankful for your love", "You are my better half", "I’m completely yours", "My love for you is unconditional and eternal", "You are my dream, my reality, my everything", "I can’t wait to spend the rest of my life with you", "I never want to stop falling in love with you", "You are my forever, my always", "You are my happily ever after", "You make every day brighter just by being you", "I love you more than you’ll ever know", "Being with you is a dream come true", "You’re the love of my life", "I can’t wait to grow old with you", "You are my sunshine", "Every day with you is my favorite day", "You make my heart race", "My love for you is beyond measure", "I’ll always choose you, every single time", "You are my world", "I am so lucky to have you", "You are the love I never thought I would find", "You complete me in every way", "Every time I see you, I fall in love all over again", "You are my favorite hello and hardest goodbye", "I’m so thankful to have you by my side", "You are my forever and always", "You’re the best part of my life", "I am yours and you are mine", "You are my dream come true", "Loving you makes me feel alive", "You make me whole", "I love you to the stars and beyond", "Your love is my anchor", "You are the love of my life", "You make me a better person", "With you, I am home", "I am lucky to have found you", "You are my reason for being", "You make my heart feel complete", "You are my one true love", "My love for you is limitless", "You’re everything I never knew I needed", "You make my world complete", "You are my constant, my always", "There is no remedy for love but to love more.", "I’m here for you, through thick and thin", "When you feel alone, just remember that I’m here for you, always", "I’ll be your strength when you feel weak", "You’re never alone; I’m always here for you", "You’re my heart and soul, and I will always stand by you", "I will never leave your side", "No matter where life takes us, I’ll always be there for you",
+            "You don’t have to go through life alone. I’m here", "Through every storm, I will always be by your side", "In every moment, I’ll be here for you", "Your heart is safe with me", "I am your safe place", "I’m here, now and always", "I am here for you, not just today, but forever", "You can always count on me", "You are never alone; I will always be with you", "You have me, always", "I’m here for you, no matter what", "Whenever you need me, I’m here", "In the darkest times, I will be your light", "Together, we can overcome anything", "Don’t worry, I’ve got your back", 
+            "I am your biggest supporter", "You are stronger than you know, and I’ll be here to remind you of that", "When life gets tough, lean on me; I’m always here for you", "You are capable of more than you think, and I’ll always believe in you", "When you doubt yourself, I’ll remind you how amazing you are", "I am proud of everything you are and everything you’re becoming", "You’re never alone, because I’m right here, always", "Your dreams are within your reach, and I’ll support you every step of the way,", "When you feel small, remember you’re bigger than anything standing in your way",               
+            "There’s nothing you can’t achieve; just take it one step at a time" ,"I’m here to remind you of your strength when you feel weak","No obstacle is too big when you have determination and support", "Your kindness, intelligence, and beauty make this world a better place", "Even when you feel lost, remember I’m here to guide you," ,"The future is bright for you, and I’ll be here cheering you on", "No matter what happens, remember that you are enough," ,"Don’t give up, the best is yet to come, and I’ll be right beside you.",
+            "You are capable of amazing things", 
+            "Believe in your dreams, even when they seem impossible", 
+            "When you feel weak, I’ll be your strength", 
+            "Your love inspires me to be a better person every day", 
+            "Together, we can face anything that comes our way", 
+            "You have a light within you that brightens up even the darkest days", 
+            "I believe in you, and I know you’re destined for greatness", 
+            "Every challenge we face only brings us closer together", 
+            "You are stronger than you think and braver than you feel", 
+            "Let your heart guide you, for it will never lead you astray", 
+            "The best part of my day is knowing you’re by my side", 
+            "You have the power to turn dreams into reality, one step at a time", 
+            "You’re the reason I smile when everything seems tough", 
+            "Your strength and determination inspire me every single day", 
+            "You are a force of nature, capable of achieving anything you set your mind to", 
+            "When life feels overwhelming, remember that I’ll always be here for you", 
+            "Believe in yourself as much as I believe in you, and you’ll be unstoppable", 
+            "You are the definition of beauty, inside and out", 
+            "No matter how tough life gets, I’ll always stand by you", 
+            "Your courage and resilience make me so proud to call you mine", 
+            "You are the heartbeat of my world, the reason I strive to be better", 
+            "Your happiness is my greatest motivation", 
+            "I’ll always be your biggest cheerleader, no matter where life takes us", 
+            "Your love gives me the strength to conquer any obstacle", 
+            "You are not just my love, but my inspiration and my guiding star", 
+            "The way you light up a room reminds me how powerful you are", 
+            "Even in moments of doubt, I want you to know how incredible you are", 
+            "Your dreams are worth chasing, and I’ll be right here supporting you", 
+            "The future is brighter with you in it, and I can’t wait to see all you achieve", 
+            "Every day, you inspire me to love more, dream bigger, and live better",
+            "You are the spark that ignites my passion and keeps me moving forward", 
+            "Every moment with you reminds me how incredible you truly are", 
+            "You have a strength within you that’s capable of moving mountains", 
+            "When you smile, it’s like the universe aligns perfectly", 
+            "Your determination and resilience inspire me to do better every day", 
+            "You are the sunshine that brightens even my darkest moments", 
+            "No matter the challenges you face, I know you’ll rise above them", 
+            "You are my safe haven, the calm in the storm, and the love of my life", 
+            "Your dreams are worth every ounce of effort you put into them", 
+            "You make the impossible seem possible just by being you", 
+            "I see greatness in you, and I’ll always remind you of it", 
+            "You are the most beautiful combination of strength and grace", 
+            "No matter how tough the road gets, I’ll walk it with you", 
+            "Your ambition is one of the many things I admire most about you", 
+            "You have a fire within you that the world needs to see", 
+            "Your love makes me believe that anything is achievable", 
+            "You inspire me with your kindness, your courage, and your dreams", 
+            "When life feels heavy, remember I’m here to help you carry it", 
+            "You are a masterpiece, and I’m so proud to be part of your journey", 
+            "Your faith in yourself will take you further than you can imagine", 
+            "I love how you never give up, even when things feel impossible", 
+            "Your heart is the most beautiful thing about you, and it shines so brightly", 
+            "Every step you take towards your dreams makes me prouder of you", 
+            "You have a way of making the world a better place, just by being in it", 
+            "No matter how far we go, I’ll always be your biggest fan", 
+            "Your strength is unmatched, and your determination is inspiring", 
+            "With you, I’ve learned that love is the greatest source of motivation", 
+            "You’re not just my love; you’re my hero and my muse", 
+            "The way you conquer challenges is nothing short of extraordinary", 
+            "You remind me every day that love and hope are the most powerful forces", 
+            "I believe in you, even when you doubt yourself", 
+            "You’ve taught me that resilience and love can overcome any obstacle", 
+            "You are the heartbeat of my dreams, and I’ll always support yours", 
+            "Your beauty, inside and out, is a constant source of inspiration to me", 
+            "You are the reason I strive to be better every day", 
+            "With you by my side, I feel like I can conquer the world", 
+            "Your love gives me strength, and your spirit gives me hope", 
+            "You are the anchor that keeps me steady, even in life’s rough seas", 
+            "Your belief in me makes me feel like I can achieve anything", 
+            "The way you chase your dreams inspires me to chase mine too", 
+            "You’re not just my partner; you’re my motivation and my strength", 
+            "Every little thing you do reminds me how lucky I am to have you", 
+            "Your courage in the face of challenges inspires me every single day", 
+            "You make me want to dream bigger, love harder, and live fully", 
+            "You have a way of making every day brighter just by being yourself", 
+            "I’ll always be here to support your dreams and celebrate your victories", 
+            "With your love and determination, there’s nothing you can’t achieve", 
+            "You inspire me to see the world through eyes full of hope and love", 
+            "Every challenge you face, you handle with such grace and strength", 
+            "You are my muse, my love, and my greatest source of inspiration", 
+            "Your dreams are worth every ounce of effort and every moment of time", 
+            "You are my light in the darkness and my reason to keep going", 
+            "You are the most amazing person I know, and I’m so lucky to have you",
+            "Good morning, beautiful! Today is another chance to shine brighter than the sun.", 
+    "Your smile has the power to turn even the toughest day into something magical.", 
+    "Let today be the day you embrace your potential and chase your dreams fearlessly.", 
+    "You bring so much joy into this world; never forget how amazing you are.", 
+    "No matter what comes your way, you’ve got the strength to conquer it all.", 
+    "Your kindness and positivity are like rays of sunshine on a cloudy day.", 
+    "Every step you take today brings you closer to your incredible future.", 
+    "You are the sparkle in my life; keep shining and lighting up the world.", 
+    "Remember, the little things you do make a big difference to those around you.", 
+    "Your determination is inspiring, and your energy is simply contagious.", 
+    "You have the ability to turn ordinary moments into extraordinary memories.", 
+    "Face today with confidence, knowing that you are unstoppable.", 
+    "Your laughter is the melody the world needs more of today.", 
+    "You are stronger than you think and more loved than you know.", 
+    "Keep your chin up and your heart open – amazing things are on their way.", 
+    "Every moment is a new opportunity to grow, learn, and shine.", 
+    "You have the power to make today beautiful, just like you.", 
+    "Let your inner light guide you through today’s challenges with grace and positivity.", 
+    "You are the author of your story; write today’s chapter with courage and love.", 
+    "Your smile is contagious, your heart is pure, and your presence is a blessing.", 
+    "No matter what today holds, remember that you are capable of incredible things.", 
+    "You are a beacon of hope and happiness to everyone lucky enough to know you.", 
+    "Your unique spark lights up every room you walk into – don’t let anyone dim it.", 
+    "Celebrate every little victory today because they all matter.", 
+    "You’ve got everything you need to make this day as amazing as you are.", 
+    "Let your dreams and passions fuel your actions and make today unforgettable.", 
+    "Your love and positivity make the world a brighter place.", 
+    "There’s nothing you can’t achieve with that beautiful heart and fierce mind of yours.", 
+    "You are a walking masterpiece, spreading joy wherever you go.", 
+    "Start the day with a smile and watch how the world smiles back at you.", 
+    "You are a force of nature, unstoppable and full of life.", 
+    "Let today be a reminder of how extraordinary and capable you are.", 
+    "With every sunrise, you get a new opportunity to chase your dreams.", 
+    "You are like a rainbow – colorful, vibrant, and uplifting to everyone around you.", 
+    "Your positive energy is what makes every day brighter and more beautiful.", 
+    "Believe in yourself as much as I believe in you, and nothing will stand in your way.", 
+    "You are my sunshine, my joy, and the reason I look forward to every day.", 
+    "The world is a better place because you’re in it, spreading love and happiness.", 
+    "Today is yours to conquer, and I know you’ll do it with grace and determination.", 
+    "You’re not just amazing – you’re a miracle in my life, and I cherish you every day.", 
+    "Face the day with your beautiful smile and a heart full of courage.", 
+    "You are proof that beauty, strength, and kindness can all exist in one person.", 
+    "Let your heart lead the way and your spirit stay high – today is yours to own.", 
+    "You’re a gift to the world, and your love and energy make it a better place.", 
+    "Wake up knowing you’re loved, cherished, and capable of doing great things.", 
+    "Your happiness is my priority, and I’m here to support you every step of the way.", 
+    "You have the power to make today the most amazing day ever, just by being you.", 
+    "Let your heart be light, your smile be wide, and your spirit be unbreakable.", 
+    "You are the definition of beauty, inside and out – never stop believing in yourself.", 
+    "Take on the day like the queen you are – bold, confident, and unstoppable.",
+
+        ];
+        
+        // Function to fetch a random quote
+        function fetchQuote() {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('quote').innerText = randomQuote;
+        }
+    
+        // Fetch a new quote on page load
+        fetchQuote();
+    
+        // Fetch a new quote when the page regains focus
+        window.addEventListener('focus', fetchQuote);
+    </script>
+    <div class="video-container">
+        <video class="video" autoplay loop muted>
+            <source src="D:\Downloads\Imminent-master\videos\31.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+</div>
+    <footer>
+        <div class="gift-icon">
+            <a href="message.html">
+                <img src="D:\Downloads\Imminent-master\images\4213958.png" alt="Gift Icon" title="Click for a surprise!">
+            </a>
+        </div>
+    </footer>    
+</body>
+</html>

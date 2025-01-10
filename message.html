@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: lavender;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .paper {
+            position: relative;
+            width: 80%;
+            max-width: 900px;
+            height: 650px;
+            background: #f9f4e1;
+            border: 2px solid #d4c4a1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #4e342e;
+            text-align: justify;
+            overflow: auto;
+        }
+
+        .message img {
+            width: 100px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
+            border-radius: 50%;
+            margin-right: 20px;
+            float: left;
+        }        
+
+        @keyframes write {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(-10px, 10px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        .message {
+            position: relative;
+            top: 0;
+            left: 0;
+            animation: writeText 15s steps(100) 1;
+            white-space: pre-wrap;
+            margin-top: 70px;
+        }
+
+        .message img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-right: 20px;
+            float: left;
+        }
+
+        @keyframes writeText {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: float 10s linear infinite;
+            opacity: 0.7;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -25px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 25px;
+            top: 0;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-10vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-duration: 4s;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 30%;
+            animation-duration: 6s;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(3) {
+            left: 50%;
+            animation-duration: 8s;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-child(4) {
+            left: 70%;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <div class="paper">
+        <div class="message" id="romanticMessage">
+            <source src="D:\Downloads\Imminent-master\images\22.jpg" type="images/jpg">        </div>
+    </div>
+
+    <script>
+        const message = `My Dearest Sweetest Sana,
+
+        You are my love, my life, and my home. As I look back on this incredible year we've shared, I’m reminded of the happiness and the challenges we’ve faced together. If I could, I would erase every sorrow and replace it with endless joy—but life doesn’t always grant such wishes.
+        
+        Still, I want to thank you from the depths of my heart for entering my life and becoming such a precious part of it. You’ve shown me the true meaning of love, and with you, every day feels like a brand-new chapter filled with hope and warmth. Without you, life feels like an empty space without air to breathe.
+        
+        Thank you for being my wonderful friend and so much more. I cherish every moment we’ve shared, and I truly hope we’ll remain the same—inseparable—for the rest of our lives. With you, I want to spend forever, showering you with all the love I hold in my heart.
+        
+        No matter what life brings, I promise I’ll always be there for you. From this moment forward, let’s leave all sorrows behind—no sorrow from 2025, only happiness, love, and the promise of brighter days.
+        
+        Wishing you a Happy and Prosperous New Year, my love. Let’s celebrate this new chapter with joy, surprises, and countless memories waiting to unfold.
+        
+        Sending you all my love, hugs, and happiness, always. 🤎🤎🤗🥰😘
+
+        Yours Forever,  
+        Sachin Anthony`;
+
+        const messageContainer = document.getElementById('romanticMessage');
+        let i = 0;
+
+        function typeWriter() {
+            if (i < message.length) {
+                messageContainer.textContent += message.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+
+        typeWriter();
+    </script>
+
+    <footer>
+        <div class="gift-icon">
+            <a href="videosong.html">
+                <img src="D:\Downloads\Imminent-master\images\4213958.png" alt="Gift Icon" title="Click for a surprise!">
+            </a>
+        </div>
+    </footer>   
+</body>
+</html>
